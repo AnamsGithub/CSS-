@@ -1,0 +1,11 @@
+node
+brew install zsh
+brew
+mv ~/.zshrc ~/.zshrc2
+curl -sSL https://get.rvm.io | bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+brew
+xcode-select —-install
+xcode-select —-install

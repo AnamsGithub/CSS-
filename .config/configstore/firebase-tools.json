@@ -1,0 +1,44 @@
+{
+	"analytics-uuid": "bec01c47-50d7-4bca-bddc-7a6698bc9f9f",
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1606037663589
+	},
+	"usage": true,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "113637823914994790858",
+		"email": "felixtechbees@gmail.com",
+		"email_verified": true,
+		"at_hash": "skEm1RmA-veVm5_U2vV_Qg",
+		"iat": 1606037673,
+		"exp": 1606041273
+	},
+	"tokens": {
+		"expires_at": 1606041292388,
+		"refresh_token": "1//0gLyHN6X6aUT6CgYIARAAGBASNwF-L9IrJL8NAvHwnRX3Sh1YZTRfhaknK-1VH4spNmsf58abspCV7W97qKLXqx0FIPP6OHD2aA0",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloud-platform",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.a0AfH6SMDF4WxdXRQNNJFHqWcXTpMLOthPI_Tg2uTlikvyNw4P37xGuqZzVN8TwaLtxWntnGWoILilRHB3ro2nippCnh5KlM1Z3pV_nsWsyXqWQoKlO3A4I8JokUHSS1wxStxISm37w6tNZBJsRyZVtHg5EohU6rlf_Si4VMlV3BLURyrH6jU",
+		"expires_in": 3599,
+		"scope": "openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/userinfo.email",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImRlZGMwMTJkMDdmNTJhZWRmZDVmOTc3ODRlMWJjYmUyM2MxOTcyNGQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEzNjM3ODIzOTE0OTk0NzkwODU4IiwiZW1haWwiOiJmZWxpeHRlY2hiZWVzQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiWTNPWTlWSUVBSVItdnBxMUxLMklZQSIsImlhdCI6MTYwNjAzNzY5MywiZXhwIjoxNjA2MDQxMjkzfQ.XUWKES19RZIb_XeZ3Vxv4ur0fu9mMPFsM8BzcCiRt3dsvnQcS_iQaylvKIhMegVNr03gtuyzqA5S1IPUfbrtmxSF4PVyaCO8c-7hRac7liCrzenZpmAfFaybTT0FWGtd3DuEVmrzXDggK0xgNMrCVzSe9G_feOpoly7Vjg4OlxX3PtOIiRiYekRmR31pp1gL61U7RqNLo2rG0qwvg5EgY8RXQ9xioAFjnzKTTZcwKkzyGSxSP1MyIjNKEo9SPhfBvC-14gcyeWqoA5Pq_th6XPsmR4T5h1GanWRp7WGoRYoi1xurKwsEPGtJvu5BxJ7C9P6wgxBzcPvyTopSy0DVaA"
+	},
+	"activeProjects": {
+		"/Users/geeky/Developer/flutter_projects/my_app": "cellasssure"
+	}
+}
