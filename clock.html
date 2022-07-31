@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR"
+      crossorigin="anonymous"
+    />
+
+    <title>CLOCK</title>
+  </head>
+  <body>
+    <div class="container my-4">
+      <div class="clock">
+        <h1 class="display-4">Current Time: <span id="time"></span></h1>
+        <p class="lead">This is a live clock</p>
+        <hr class="my-4" />
+        <p>It shows time and updates every second.</p>
+        <a class="btn" href="#" role="button">Browse Time</a>
+      </div>
+    </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <style>
+      body {
+        background-color: rgb(211, 184, 164);
+      }
+      .container {
+        border-radius: 5mm;
+        width: 20cm;
+        height: 7cm;
+        background-color: rgb(193, 217, 229);
+      }
+      .btn {
+        color: aliceblue;
+        background-color: rgb(6, 107, 158);
+      }
+      #time {
+        font-family: "Poppins";
+        font-size: 1cm;
+      }
+    </style>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script>
+      let a;
+      let date;
+      let hours;
+      let minutes;
+      let seconds;
+      let clock;
+      setInterval(() => {
+        a = new Date();
+        date = a.toLocaleDateString();
+        hours = a.getHours();
+        minutes = a.getMinutes();
+        seconds = a.getSeconds();
+
+        clock = hours + ":" + minutes + ":" + seconds;
+        document.getElementById("time").innerHTML = clock + " on " + date;
+      }, 1000);
+    </script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

@@ -1,0 +1,371 @@
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 50rem;
+  // left: -48rem;
+  &__side {
+    // position: relative;
+    top: 0;
+    left: 0;
+    // color: rgb(0, 0, 0);
+    font-size: 2rem;
+    height: 50rem;
+    width: 30rem;
+
+    @include respond(tab-lds) {
+      width: 30rem;
+    }
+    @include respond(tab-ptr) {
+      width: 27rem;
+    }
+    @include respond(phone) {
+      width: 25rem;
+    }
+
+    @include respond(big-desk) {
+      width: 35rem;
+    }
+
+    transition: all 0.3s ease;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem $black-shadow;
+    &--front {
+      background-color: #fff;
+    }
+    &--back {
+      transform: rotateY(180deg);
+      position: absolute;
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url(../img/nat-5.jpeg);
+    }
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url(../img/nat-6.jpeg);
+    }
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url(../img/nat-7.jpeg);
+    }
+  }
+  &__heading {
+    display: inline-block;
+    // padding-left: 40%;
+    position: relative;
+    color: #fff;
+
+    &--1 {
+      position: absolute;
+      width: 11rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      );
+      text-align-last: center;
+      top: -14rem;
+      left: 17rem;
+      box-shadow: 0 1.5rem 4rem $black-shadow;
+
+      // @include respond(tab-lds) {
+      //   width: 70rem;
+      // }
+      @include respond(tab-ptr) {
+        left: 15rem;
+      }
+
+      @include respond(phone) {
+        left: 12.8rem;
+      }
+
+      @include respond(big-desk) {
+        left: 22rem;
+      }
+    }
+    &--2 {
+      position: absolute;
+      width: 13rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-secondary-light,
+        $color-secondary-dark
+      );
+      text-align: center;
+      top: -10rem;
+      left: 15rem;
+      box-shadow: 0 1.5rem 4rem $black-shadow;
+
+      // @include respond(tab-lds) {
+      //   width: 70rem;
+      // }
+      @include respond(tab-ptr) {
+        left: 13rem;
+      }
+
+      @include respond(phone) {
+        left: 11rem;
+      }
+
+      @include respond(big-desk) {
+        left: 19.5rem;
+      }
+    }
+    &--3 {
+      position: absolute;
+      width: 15rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      text-align-last: center;
+      top: -14rem;
+      left: 13rem;
+      box-shadow: 0 1.5rem 4rem $black-shadow;
+
+      // @include respond(tab-lds) {
+      //   width: 70rem;
+      // }
+      @include respond(tab-ptr) {
+        left: 11rem;
+      }
+
+      @include respond(phone) {
+        left: 9rem;
+      }
+
+      @include respond(big-desk) {
+        left: 18rem;
+      }
+    }
+    &--4 {
+      position: absolute;
+      width: 9rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      text-align: center;
+      top: -10rem;
+      left: 19rem;
+      box-shadow: 0 1.5rem 4rem $black-shadow;
+
+      // @include respond(tab-lds) {
+      //   width: 70rem;
+      // }
+      @include respond(tab-ptr) {
+        left: 17rem;
+      }
+
+      @include respond(phone) {
+        left: 15rem;
+      }
+
+      @include respond(big-desk) {
+        left: 24rem;
+      }
+    }
+    &--5 {
+      position: absolute;
+      width: 15rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+      text-align-last: center;
+      top: -14rem;
+      left: 13rem;
+      box-shadow: 0 1.5rem 4rem $black-shadow;
+
+      // @include respond(tab-lds) {
+      //   width: 70rem;
+      // }
+      @include respond(tab-ptr) {
+        left: 11rem;
+      }
+
+      @include respond(phone) {
+        left: 9rem;
+      }
+
+      @include respond(big-desk) {
+        left: 18rem;
+      }
+    }
+    &--6 {
+      position: absolute;
+      width: 18rem;
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+      background-image: linear-gradient(
+        to right bottom,
+        $color-tertiary-light,
+        $color-tertiary-dark
+      );
+      text-align: center;
+      top: -10rem;
+      left: 10rem;
+      box-shadow: 0 1.5rem 4rem $black-shadow;
+
+      // @include respond(tab-lds) {
+      //   width: 70rem;
+      // }
+      @include respond(tab-ptr) {
+        left: 8rem;
+      }
+
+      @include respond(phone) {
+        left: 6rem;
+      }
+
+      @include respond(big-desk) {
+        left: 15rem;
+      }
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    color: $color-gray;
+    // top: 20rem;
+    display: inline;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color--gray-light-2;
+        }
+      }
+    }
+  }
+
+  &__textback {
+    color: #fff;
+    &--1 {
+      font-size: 2rem;
+      font-weight: 300;
+      text-align: center;
+      margin-top: 8rem;
+    }
+    &--2 {
+      font-size: 6rem;
+      font-weight: 300;
+      text-align: center;
+      margin-top: 0;
+    }
+  }
+  &__btn {
+    text-transform: uppercase;
+    color: $color-gray;
+    background-color: #fff;
+    margin-top: 15rem;
+  }
+
+  @include respond(tab-ptr) {
+    height: auto;
+
+    &__side {
+      height: auto;
+      position: relative;
+      border-radius: 3px;
+
+      &--back {
+        transform: rotateY(0);
+        // margin-top: -8rem;
+
+        &-1,
+        &-2,
+        &-3 {
+          clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+          margin-top: -14rem;
+        }
+      }
+    }
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+    &__textback {
+      &--1 {
+        padding-top: 4rem;
+      }
+    }
+    &__btn {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+}

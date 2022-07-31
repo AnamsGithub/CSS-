@@ -1,0 +1,35 @@
+*,
+*::after,
+*::before {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; //1rem = 10px
+
+  @include respond(tab-lds) {
+    font-size: 56.25%; //1rem = 9px--9/16= 56.25%
+  }
+  @include respond(tab-ptr) {
+    font-size: 50%; //1rem = 8px ----8/16=50%
+  }
+  @include respond(phone) {
+    font-size: 30%;
+  }
+
+  @include respond(big-desk) {
+    font-size: 75%; //1rem = 12px ---12/16=75%
+  }
+}
+body {
+  box-sizing: border-box;
+  width: 100vw;
+}
+
+// @media (max-width: 600px) {
+//   html {
+//   }
+//   body {
+//   }
+// }

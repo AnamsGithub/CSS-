@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing page for natours",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss natours.css -w",
+    "compile:sass": "node-sass sass/main.scss natours.comp.css ",
+    "concat:css": "concat -o natours.concat.css icon_font.css natours.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' natours.concat.css -o natours.prefix.css"
+  },
+  "author": "Anam",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^7.0.1",
+    "postcss-cli": "^10.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7"
+  }
+}
