@@ -1,0 +1,22 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "Landing page for trillo",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css ",
+    "concat:css": "concat -o css/style.concat.css  css/style.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/style.concat.css -o css/style.prefix.css"
+  },
+  "author": "Anam",
+  "license": "ISC",
+  "devDependencies": {
+    "concat": "^1.0.3",
+    "node-sass": "^7.0.1",
+    "postcss-cli": "^10.0.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.7"
+  }
+}

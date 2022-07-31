@@ -1,0 +1,111 @@
+.logo {
+  height: 3.25rem;
+  margin-left: 3rem;
+}
+
+.search {
+  flex: 0 0 40%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light2);
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 10rem;
+    width: 90%;
+    transition: all 0.3s ease;
+    margin-right: -3.25rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light3);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light4);
+    }
+  }
+  &__button {
+    border: none;
+    background-color: var(--color-grey-light2);
+
+    &:focus {
+      outline: none;
+      background-color: var(--color-grey-light3);
+    }
+    &:active {
+      transform: translateY(0.2rem);
+    }
+  }
+  &__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: var(--color-grey-dark3);
+  }
+}
+.user-nav {
+  display: flex;
+  align-items: center;
+  flex: 0 0 15%;
+  transition: all 0.3s ease;
+  align-self: stretch;
+
+  &__icon-box {
+    width: 5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding-top: 2rem;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-grey-light3);
+    }
+  }
+  &__icon {
+    height: 2.25rem;
+    width: 2.25rem;
+    fill: var(--color-grey-dark2);
+  }
+  &__notif {
+    background-color: red;
+    color: #fff;
+    font-size: 1rem;
+    // font-weight: 400;
+    text-align: center;
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 9.5rem;
+    margin-left: 1.5rem;
+  }
+  &__user {
+    width: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-grey-light3);
+    }
+  }
+  &__user-photo {
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+  &__user-name {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
