@@ -1,0 +1,122 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container my-4">
+      <h1 class="text-center" id="heading">Weather App</h1>
+      <p class="text-center" id="input">
+        <input
+          type="text"
+          class="form"
+          placeholder="enter city name"
+          id="city"
+        />
+        <button type="button" id="btn" class="btn btn-sm btn-primary">
+          get
+        </button>
+      </p>
+      <p class="text-center" id="result"><div class="spinner-border text-primary" id="spinner"></div></p>
+    </div>
+    
+    <style>
+      body {
+        background-color: #333;
+      }
+
+      #heading {
+        color: white;
+      }
+      #city {
+        height: 1cm;
+      }
+      #result {
+        /* font-family: "Poppins"; */
+        color: black;
+        background-color: white;
+        border-radius: 2mm;
+      }
+      #spinner {
+        margin-left: 50%;
+      }
+    </style>
+
+    <script>
+      const city = document.getElementById("city");
+      const result = document.getElementById("result");
+      const btn = document.getElementById("btn");
+      const spinner = document.getElementById('spinner')
+      let city1;
+      let state;
+
+      spinner.hidden = true;
+      btn.addEventListener("click", function () {
+        result.innerHTML='';
+        spinner.hidden = false;
+        if (city.value != "") {
+          getLatLong(city.value);
+        } else {
+          spinner.hidden = true;
+          result.innerHTML =
+            "You need to enter a city name to get weather report";
+        }
+      });
+
+      async function getLatLong(cityname) {
+        try {
+          const response = await fetch(
+            `https://api.openweathermap.org/geo/1.0/direct?q=${cityname}&limit=1&appid=4bca09dc830f66918f6c610375d91017`
+          );
+          const data = await response.json();
+          //   console.log(data);
+          //   console.log(data[0].name, data[0].state);
+          city1 = data[0].name;
+          state = data[0].state;
+          getWeather(data[0].lat, data[0].lon);
+        } catch {
+          spinner.hidden = true;
+          result.innerHTML = `There was a trouble loading data <br> check city name and retry`;
+        }
+      }
+
+      async function getWeather(lat, long) {
+        try {
+          const response = await fetch(`
+        https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=4bca09dc830f66918f6c610375d91017
+        `);
+          const data = await response.json();
+          //   console.log(data);
+          display(data);
+          spinner.hidden = true;
+        } catch (e) {
+          spinner.hidden = true;
+          result.innerHTML = "Unexpected Error";
+          console.log(e);
+        }
+      }
+      function display(x) {
+        const w = x.main;
+        result.innerHTML = `<b>${x.name == city1 ? "" : x.name} ${city1}, ${
+          state != undefined ? state : ""
+        } ${x.sys.country} </b><br>${x.weather[0].main} <br> Feels: ${(
+          w.feels_like - 273.15
+        ).toFixed(0)}℃ <br>Humidity: ${w.humidity} <br>Temperature: ${(
+          w.temp - 273.15
+        ).toFixed(0)}℃ Min: ${(w.temp_min - 273.15).toFixed(0)}℃  Max: ${(
+          w.temp_max - 273.15
+        ).toFixed(0)}℃ <br>Visibility: ${x.visibility} <br>Wind speed: ${
+          x.wind.speed
+        } `;
+      }
+    </script>
+  </body>
+</html>

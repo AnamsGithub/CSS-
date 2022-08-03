@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css"
+      integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR"
+      crossorigin="anonymous"
+    />
+    <title>Stop Watch</title>
+  </head>
+  <body>
+    <div class="container my-4">
+      <h1 class="title">ANAM's STOPWATCH</h1>
+      <div class="stopwatch">
+        <h1 class="display"><span id="watch">00:00:00</span></h1>
+        <button type="button" id="start" class="btn btn-default my-4">
+          ▶︎
+        </button>
+        <button type="button" id="lap" class="btn btn-default my-4">LAP</button>
+        <button type="button" id="reset" class="btn btn-default my-4">
+          RESET
+        </button>
+      </div>
+    </div>
+    <table class="table">
+      <tbody id="tableBody">
+        <!-- <tr>
+          <th scope="row">1</th>
+          <td>difference</td>
+          <td>actual</td>
+        </tr> -->
+      </tbody>
+    </table>
+    <style>
+      body {
+        background-color: rgb(72, 72, 72);
+      }
+      .display {
+        font-family: "Poppins";
+        font-size: 2cm;
+      }
+      .title {
+        border-radius: 2mm;
+        background-color: rgb(141, 139, 137);
+        text-align: center;
+      }
+      #start {
+        background-color: rgb(178, 217, 227);
+        font-family: "Poppins";
+      }
+      #lap {
+        background-color: rgb(141, 141, 137);
+        font-family: "Poppins";
+      }
+      #reset {
+        background-color: rgb(225, 173, 173);
+        font-family: "Poppins";
+      }
+    </style>
+    <script>
+      const watch = document.getElementById("watch");
+      const start_btn = document.getElementById("start");
+      const lap_btn = document.getElementById("lap");
+      const reset_btn = document.getElementById("reset");
+      const table = document.getElementById("tableBody");
+
+      lap_btn.disabled = true;
+      reset_btn.disabled = true;
+
+      let decaSeconds = 0;
+      function time_format(n) {
+        let miliSec = Number(n.toString().slice(-2));
+        n = Number(n.toString().slice(0, -2) + "00");
+
+        let seconds = Number(n.toString().slice(-4, -2));
+        n = Number(n.toString().slice(0, -4) + "0000");
+
+        let minutes = n / (100 * 60);
+        n = Number(n.toString().slice(0, -6) + "000000");
+
+        let hours = n / (100 * 60 * 60);
+
+        let time_Str = `${hours}:${minutes}:${seconds}:${miliSec}`;
+        return time_Str;
+      }
+
+      function stopwatch_start() {
+        interval = setInterval(() => {
+          decaSeconds++;
+          watch.innerHTML = time_format(decaSeconds);
+        }, 10);
+      }
+      function stopwatch_stop() {
+        // watch.innerHTML = `${hours}:${minutes}:${seconds}:${miliseconds}`;
+        // clearInterval(milisec_interval);
+        // clearInterval(sec_interval);
+        // clearInterval(min_interval);
+        // clearInterval(hour_interval);
+        clearInterval(interval);
+      }
+
+      start_btn.addEventListener("click", function () {
+        lap_btn.disabled = false;
+        reset_btn.disabled = false;
+        if (start_btn.innerHTML == "◼︎") {
+          lap_btn.disabled = true;
+          start_btn.innerHTML = "▶︎";
+          stopwatch_stop();
+        } else {
+          lap_btn.disabled = false;
+          start_btn.innerHTML = "◼︎";
+          stopwatch_start();
+        }
+      });
+
+      let lapArr = [];
+      let i = 1;
+
+      lap_btn.addEventListener("click", function () {
+        let str = "";
+        str += ` <tr>
+                  <th scope="row">${i++}</th>
+                  <td> ${time_format(
+                    decaSeconds -
+                      (lapArr.length > 0 ? lapArr[lapArr.length - 1] : 0)
+                  )}</td>
+                  <td>${watch.innerHTML}</td>
+                </tr> `;
+        lapArr.push(decaSeconds);
+
+        table.innerHTML += str;
+      });
+      reset_btn.addEventListener("click", function () {
+        lap_btn.disabled = true;
+        reset_btn.disabled = true;
+        decaSeconds = 0;
+        watch.innerHTML = time_format(decaSeconds);
+        stopwatch_stop();
+        table.innerHTML = "";
+        i = 1;
+        lapArr = [];
+        start_btn.innerHTML = "▶︎";
+      });
+    </script>
+  </body>
+</html>
